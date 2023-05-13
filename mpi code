@@ -1,0 +1,278 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption, tabularx}
+\usepackage{enumitem, ragged2e}
+\usepackage[svgnames]{xcolor}
+ 
+%\renewcommand{\familydefault}{\sfdefault}
+ 
+\title{Theoretical and experimental comparison of Sorting algorithms}
+\author{Hamzeh Kizawi\\ West University of Timisoara\\
+\textbf{Email:} \texttt{hamzeh.kizawi11@e-uvt.ro}
+}
+
+%date{}
+\makeatletter
+\newcommand*{\compress}{\@minipagetrue}
+\makeatother
+ 
+
+ \makeatletter
+    \makeatother
+ \newcolumntype{I}{ >{\RaggedRight\compress\itemize}X<{\enditemize}}
+    \newcommand*{\mcl}[1]{\multicolumn{1}{l|}{#1}}
+\usepackage[skip=1ex]{caption}
+\usepackage{enumitem}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+
+\bibliographystyle{plain}
+
+
+Sorting algorithm is one of the oldest research fields in computer science. The goal of sorting algorithms is to make it easier to go through the data in a way faster and more efficient. Apparently, it is completely dependent on the data type, the information we have, in which order they are put. By mentioning that, we can tell that there is no sorting algorithm which works the best for all options. Therefore, here we have compared the time complexity of certain types or sorting algorithms: Bubble Sort, Insertion Sort, Quick Sort and Merge Sort.
+    
+
+\end{abstract}
+\rule{\textwidth}{0.5pt}
+ 
+\pagebreak
+\tableofcontents
+ 
+\pagebreak
+ 
+ 
+\section{Introduction}
+ 
+In our daily life as well, but especially in the field of Computer Science, sorting algorithms are widely used. For instance, we can sort a list of random numbers by various methods of sorting types. However, an important question of which sorting algorithm is the most-efficient or least-complex is yet to be fully addressed. The goal of this paper is to present a comparative study of some sorting algorithms with the purpose to come up with the most efficient sorting algorithm. 
+In this paper we will discuss four sorting algorithms which are
+already exist named as Quick Sort, Bubble Sort, Selection
+Sort, Merge Sort. And we will speak about their advantages and disadvantages and we will do comparison between their results, If any algorithm takes less processing time it means that it sorts the element faster than others.
+
+
+
+
+\section{The Definition of "Sorting Algorithms"}
+
+Sorting algorithms are a set of instructions that take an array or list as an input and arrange the items into a particular order. Sorts are most commonly in numerical or a form of alphabetical (or lexicographical) order, and can be in ascending (A-Z, 0-9) or descending (Z-A, 9-0) order.\\
+Since they can often reduce the complexity of a problem, sorting algorithms are very important in computer science. These algorithms have direct applications in searching algorithms, database algorithms, divide and conquer methods, data structure algorithms, and many more.\\
+When choosing a sorting algorithm, some questions have to be asked – How big is the collection being sorted? How much memory is available? Does the collection need to grow? The answers to these questions may determine which algorithm is going to work best for each situation. Some algorithms like merge sort may need a lot of space or memory to run, while insertion sort is not always the fastest, but doesn't require many resources to run. You should determine what your requirements are, and consider the limitations of your system before deciding which sorting algorithm to use.
+
+ 
+
+ \pagebreak
+\section{Sorting Types}
+\subsection{Quick Sort}
+In \ Quick Sort there are three main steps: 
+\begin{itemize}
+    \item \emph{step 1} -- Make any element as pivot.
+    \item \emph{step 2} -- Partition the array on the basis of pivot. 
+    \item \emph{step 3} -- Apply quick sort on left partition recursively.
+\end{itemize}
+ 
+In this sort an element called pivot is identified and that element is fixed in its place by moving all
+the elements less than that to its left and all the elements greater than that to its right. Since it
+partitions the element sequence into left, pivot and right it is referred as a sorting by partitioning.
+It's an O (n log n) Time complexity in average case~\cite{cormen2009leiserson} and~\cite{lamarca1997luence}.
+
+
+ \subsection{Bubble Sort}
+Each element in bubble sort is compared to its neighboring element. If the first element is larger than the second, the element's location is swapped; otherwise, it remains unchanged. The next element is then compared to its neighboring element, and the process is repeated for all of the array's elements. These are the steps for bubble sort~\cite{jain2014comparative}:
+ 
+\begin{itemize}
+     \item \emph{step 1} -- Look at the first number in the list.
+     \item \emph{step 2} -- Compare the current number with the next number.
+     \item \emph{step 3} -- Is the next number smaller than the current number? ...
+     \item \emph{step 4} -- Move to the next number along in the list and make this the current number.
+     \item \emph{step 5} -- Repeat from step 2 until the last number in the list has been reached.
+
+\end{itemize}
+
+
+
+ \newpage
+ \subsection{Merge Sort}
+Merge sort is a sorting algorithm based on the Divide and conquer strategy. It works by recursively dividing the array into two equal halves, then sort them and combine them. It takes a time of (n logn) in the worst case~\cite{kronrod1969optimal}. 
+
+\begin{itemize}
+     \item \emph{step 1} -- Find the middle index of the array.
+     \item \emph{step 2} -- Divide the array from the middle.
+     \item \emph{step 3} -- Call merge sort for the second half of the array.
+     \item \emph{step 4} -- Merge the two sorted halves into a single sorted array.
+
+\end{itemize}
+
+\subsection{Insertion Sort}
+\paragraph{Steps of Insertion sort:}
+
+\begin{itemize}
+     \item \emph{step 1} -- If it is the first element, it is already sorted, Pick the next element.
+     \item \emph{step 2} -- Compare with all the elements in sorted sub-list.
+     \item \emph{step 3} -- Shift all the the elements in sorted sub-list that is greater than the value to be sorted.
+     \item \emph{step 4} -- Insert the value
+     \item \emph{step 5} -- Repeat until list is sorted.
+
+\end{itemize}
+
+Insertion sort is a simple sorting algorithm that builds the final
+sorted list one item at a time,  It has O (n2) time complexity, It is much less efficient on large lists than more advanced algorithms, However, insertion sort provides several advantages Simple implementation and, Efficient for small data sets~\cite{cormen2009leiserson}. 
+
+
+
+\begin{table}[!htb]
+\centering
+\setlist[itemize]{font= \color{DeepSkyBlue}, wide, leftmargin=*, noitemsep, after=\vspace*{-\topsep}}
+\setlength{\extrarowheight}{3pt}
+\setlength{\tabcolsep}{3pt}
+\caption{Summary of advantages and disadvantages of the Sorting types configurations} 
+\label{my-label}
+\begin{tabularx}{\textwidth}{|p{15mm}|*{2}{>{\compress\RaggedRight\arraybackslash} X |}}
+\hline
+Sorting types con\-figuration & Advantages & Disadvantages \\
+\hline
+Bubble Sort
+& \begin{itemize}
+  \item Simple and easy for implementation
+\item efficient when input data is sorted 
+\end{itemize}
+& \begin{itemize}
+  \item Inefficient for large volume of input data
+
+\end{itemize} \\
+
+\hline
+Selection Sort  
+& \begin{itemize}
+  \item efficient for small amount
+of input data. 
+
+\end{itemize}
+& \begin{itemize}
+  \item perform all n comparisons for sorted input data
+  \item Inefficient for large volume of input data
+
+\end{itemize} \\
+\hline
+Merge Sort
+& \begin{itemize}
+   \item Efficient for less amount of input data
+   
+\end{itemize} 
+
+
+& \begin{itemize} 
+  \item Requires extra memory for sorting
+
+\end{itemize} \\
+\hline
+Quick Sort
+& \begin{itemize}
+  \item Fast and Efficient for large amount of input data 
+
+\end{itemize} 
+& \begin{itemize}
+  \item Inefficient for sorted input data
+\end{itemize} \\
+
+\hline
+\end{tabularx}
+\cite{karunanithi2014survey} \cite{sareen2013comparison}
+\end{table}
+
+
+\section{Discussion of Results}
+ 
+As we see in the table 1 there are many differences between the advantages and the disadvantages for each sorting type, that's because every type of them gives the best performance in different kind of arrays, for Quick sort, it is used for small elements of array as well as large elements of array, for the Bubble sort, it is easily implemented, But slower than the other O(n2) sorting algorithms, It is about twice as slow as selection sort. In bubble sort, the elements are swapped without additional temporary storage, so space requirement is minimum. And about the Selection sort, it performs well on small array. and finely Merge sort, it doesn't required big amount of data, but it takes more from the memory space. 
+
+
+
+\section{Comparison}
+After what we have seen in the table 1 from advantages and disadvantages for each sorting type we tried to input 50000 random number to see the the time required for each sorting type to finish, therefore that's  how we can know which one from the algorithms takes less processing time so we know that it sorts the elements faster than others:
+
+    \begin{table}
+    \caption{Comparison of the results of sorting types in sec}
+    \label{5.1}
+\setlist[itemize]{font=\color{DeepSkyBlue},
+                  nosep,
+                  leftmargin=*,
+                  after=\vspace*{-\baselineskip}}
+    \setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{|>{\RaggedRight}p{16mm}|*{2}{I |}}
+    \hline
+sorting types
+    &   \mcl{time in sec}    &   \mcl{average time in sec}        \\
+    \hline
+Quick Sort
+    &   \item 12.2
+        \item 15.5
+        \item 13.3
+        \item 14.1
+        \item 19.1
+        \item 15.2
+
+
+        &   \item 14.9 sec
+            \\
+    \hline
+Bubble Sort
+    &   \item 40.2
+        \item 50.12
+        \item 45.3
+        \item 39.4
+        \item 45.6
+        \item 49.6
+        &   \item 45.03 sec
+            \\
+    \hline
+Selection Sort
+    &   \item 90.5
+        \item 88.8
+        \item 79.4
+        \item 95.5
+        \item 82.2
+        \item 80.8
+
+
+        &   \item 86.2 sec
+            \\
+    \hline
+    
+Merge Sort
+    &   \item 32.2
+        \item 35.5
+        \item 29.9
+        \item 33.3
+        \item 25.5
+        \item 28.7
+
+
+        &   \item 30.85 sec
+            \\
+    \hline
+\end{tabularx}
+    \end{table}
+\pagebreak
+ 
+\section{Methodology}
+ When it is about doing experiments on executions of programs, we get extraordinarily different results. That is why, it is essential to mention on which operating system, machine and of course in which language we implemented our experiment. It can be very useful for the people who intend to reverify our results, All the four sorting algorithms (Selection Sort, Merge sort, Quick sort and Bubble Sort) were implemented in C++ programming languages and tested for the
+random sequence input of length 50000, All the four sorting algorithms were executed on machine with 64-bit Operating System having AMD Ryzen 5 4600H with Radeon Graphics 3.00 GHz and installed memory (RAM) 8.00 GB. Results shown in table 2 that Quick sort is the fastest and the selection sort the slowest one in our comparing process. 
+
+\section{Conclusions }
+ 
+This paper compares and contrasts the survey and performance aspects of several sorting strategies. It also shows us the pros and cons of various sorting algorithms. How they work, the amount of memory required, and some results from sorting random numbers, so we can compere them. It comes to the conclusion that sorting techniques are problem-specific.
+ 
+ 
+
+ \bibliography{mybib}
+\end{document}
+
+
+
+
